@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CivicHelp — Autonomous Civic Resolution Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            night: '#070B14',
+            surface1: '#0F1626',
+            surface2: '#151D30',
+            civicBlue: '#3B82F6',
+            verifiedTeal: '#2DD4BF',
+            slaAmber: '#F59E0B',
+            alertRed: '#F43F5E',
+            agentViolet: '#A78BFA',
+            mutedText: '#8B95A9',
+            lightText: '#E6EAF2'
+          },
+          fontFamily: {
+            serif: ['Newsreader', 'Georgia', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #070B14;
+      color: #E6EAF2;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    .hero-bg {
+      background: radial-gradient(circle at 50% 20%, rgba(59, 130, 246, 0.15) 0%, rgba(167, 139, 250, 0.08) 35%, transparent 70%);
+    }
+    .card-border {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .card-border-glow {
+      border: 1px solid rgba(59, 130, 246, 0.25);
+      box-shadow: 0 0 25px rgba(59, 130, 246, 0.08);
+    }
+    .grid-lines {
+      background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+  </style>
+</head>
+<body class="bg-night antialiased selection:bg-civicBlue selection:text-white">
+
+  <!-- Top Demo Environment Banner -->
+  <div class="w-full bg-[#0a0f1d] border-b border-white/5 py-1.5 px-4 text-center">
+    <div class="inline-flex items-center gap-2 text-[11px] font-mono tracking-wider text-slaAmber uppercase">
+      <span class="w-1.5 h-1.5 rounded-full bg-slaAmber animate-pulse"></span>
+      Demo Environment — Synthetic Data
+      <span class="text-white/20 mx-1">|</span>
+      <span class="text-mutedText">Night Operations Active // v2.4</span>
+    </div>
+  </div>
+
+  <!-- Sticky Glass Navigation -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#070B14]/80 border-b border-white/10 px-8 py-3.5 transition-all">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-surface2 card-border flex items-center justify-center text-civicBlue shadow-inner">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-2">
+            <span class="font-semibold text-sm tracking-tight text-white">CivicHelp</span>
+            <span class="px-1.5 py-0.5 text-[9px] font-mono rounded bg-white/5 text-mutedText border border-white/10">v2.4</span>
+          </div>
+          <span class="text-[10px] text-mutedText tracking-wider font-mono">SYS-ONLINE // FED-04</span>
+        </div>
+      </div>
+
+      <!-- Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-xs font-medium text-mutedText">
+        <a href="#pipeline" class="hover:text-white transition-colors">Pipeline</a>
+        <a href="#resolution-engine" class="hover:text-white transition-colors">4-Step Resolution</a>
+        <a href="#telemetry" class="hover:text-white transition-colors">Live Telemetry</a>
+        <a href="#safeguards" class="hover:text-white transition-colors">Autonomous Safeguards</a>
+        <a href="#architecture" class="hover:text-white transition-colors">Audit Ledger</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="flex items-center gap-3">
+        <div class="hidden sm:flex items-center gap-2 px-2.5 py-1 rounded-full bg-surface1 card-border text-[11px] text-verifiedTeal font-mono">
+          <span class="w-1.5 h-1.5 rounded-full bg-verifiedTeal"></span>
+          Swarm: 18 Agents
+        </div>
+        <button class="px-4 py-2 rounded-lg bg-civicBlue text-white text-xs font-medium hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/20 flex items-center gap-1.5">
+          <span>Open console</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section with 3D Night-City Placeholder -->
+  <section class="relative min-h-[88vh] flex items-center justify-center overflow-hidden px-6 pt-12 pb-20 hero-bg">
+    <!-- Grid and Tech Accent Lines -->
+    <div class="absolute inset-0 grid-lines opacity-40 pointer-events-none"></div>
+
+    <!-- 3D Night-City Vector Scene Backdrop Placeholder -->
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-25">
+      <div class="relative w-full max-w-6xl h-full flex items-center justify-center">
+        <!-- SVG Synthetic Wireframe Mesh representing Night City Isometric Topography -->
+        <svg class="w-full h-full object-cover" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="cyberMesh" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.4"/>
+              <stop offset="50%" stop-color="#A78BFA" stop-opacity="0.2"/>
+              <stop offset="100%" stop-color="#2DD4BF" stop-opacity="0.3"/>
+            </linearGradient>
+            <radialGradient id="meshCenter" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.25"/>
+              <stop offset="100%" stop-color="#070B14" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle cx="600" cy="350" r="320" fill="url(#meshCenter)"/>
+          <!-- Grid Perspective Rays -->
+          <g stroke="url(#cyberMesh)" stroke-width="0.8">
+            <line x1="100" y1="650" x2="600" y2="350"/>
+            <line x1="250" y1="650" x2="600" y2="350"/>
+            <line x1="400" y1="650" x2="600" y2="350"/>
+            <line x1="550" y1="650" x2="600" y2="350"/>
+            <line x1="700" y1="650" x2="600" y2="350"/>
+            <line x1="850" y1="650" x2="600" y2="350"/>
+            <line x1="1000" y1="650" x2="600" y2="350"/>
+            <line x1="1150" y1="650" x2="600" y2="350"/>
+            <!-- Iso Blocks -->
+            <polygon points="450,380 520,340 580,370 510,410" fill="#0F1626" stroke="#3B82F6" stroke-width="1"/>
+            <polygon points="620,330 690,290 740,320 670,360" fill="#151D30" stroke="#A78BFA" stroke-width="1"/>
+            <polygon points="340,430 420,380 470,410 390,460" fill="#0F1626" stroke="#2DD4BF" stroke-width="0.8"/>
+            <polygon points="710,420 800,370 860,400 770,450" fill="#0F1626" stroke="#3B82F6" stroke-width="0.8"/>
+          </g>
+          <!-- Geo node pins -->
+          <circle cx="510" cy="375" r="4" fill="#3B82F6" />
+          <circle cx="670" cy="325" r="4" fill="#A78BFA" />
+          <circle cx="420" cy="410" r="3" fill="#2DD4BF" />
+          <circle cx="770" cy="410" r="3" fill="#F59E0B" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Foreground Content -->
+    <div class="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
+      <!-- Tag Pill -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface1 card-border text-xs mb-8 text-lightText/90 shadow-sm backdrop-blur-md">
+        <span class="w-2 h-2 rounded-full bg-agentViolet animate-ping"></span>
+        <span class="font-mono text-agentViolet">AUTONOMOUS TRIAGE ENGINE</span>
+        <span class="text-white/20">|</span>
+        <span class="text-mutedText">99.82% Confidence Vector</span>
+      </div>
+
+      <!-- Main Headline in refined serif -->
+      <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl font-normal tracking-tight text-white leading-[1.08] mb-6">
+        From citizen reports to <span class="italic text-transparent bg-clip-text bg-gradient-to-r from-white via-[#E6EAF2] to-civicBlue/80">verified outcomes</span>.
+      </h1>
+
+      <!-- One-line subhead -->
+      <p class="text-base sm:text-lg md:text-xl text-mutedText font-normal max-w-2xl mx-auto leading-relaxed mb-10">
+        Autonomous multi-modal civic triage, automated field dispatch, and cryptographically verified resolutions for modern municipalities.
+      </p>
+
+      <!-- Two Hero Action Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+        <button class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-civicBlue hover:bg-blue-600 text-white text-sm font-semibold transition-all shadow-xl shadow-blue-500/25 flex items-center justify-center gap-2 group">
+          <span>Open console</span>
+          <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </button>
+        <button class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-surface2 hover:bg-[#1a243c] card-border text-lightText text-sm font-medium transition-all flex items-center justify-center gap-2.5">
+          <div class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center">
+            <svg class="w-2.5 h-2.5 text-white fill-current ml-0.5" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+          <span>Watch the live demo</span>
+        </button>
+      </div>
+
+      <!-- Terminal Status Ribbon under Hero -->
+      <div class="mt-14 inline-flex items-center gap-6 px-5 py-2.5 rounded-xl bg-surface1/80 card-border backdrop-blur-md text-xs font-mono text-mutedText">
+        <span class="flex items-center gap-2 text-verifiedTeal">
+          <span class="w-1.5 h-1.5 rounded-full bg-verifiedTeal"></span>
+          Ingestion: 311 / SMS / Vision AI
+        </span>
+        <span class="hidden sm:inline text-white/20">•</span>
+        <span class="hidden sm:inline">District 4 Field Crew Dispatched (ETA 11m)</span>
+        <span class="hidden md:inline text-white/20">•</span>
+        <span class="hidden md:inline text-agentViolet">P0 Incident SLA: 00:14:23 to breach</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Metric Cards Section (Compact Row of 3) -->
+  <section id="telemetry" class="relative z-10 max-w-7xl mx-auto px-6 -mt-6 mb-24">
+    <div class="flex items-center justify-between mb-4">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-verifiedTeal"></span>
+        <span class="text-xs font-mono uppercase tracking-wider text-mutedText">Realtime Civic Operations Core</span>
+      </div>
+      <span class="px-2.5 py-0.5 rounded text-[11px] font-mono bg-verifiedTeal/10 text-verifiedTeal border border-verifiedTeal/20">
+        from live data
+      </span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <!-- Metric Card 1 -->
+      <div class="p-6 rounded-[14px] bg-surface1 card-border relative overflow-hidden group hover:border-civicBlue/40 transition-all">
+        <div class="absolute top-0 right-0 p-4 opacity-10 font-mono text-4xl text-civicBlue font-bold">01</div>
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-mono text-mutedText uppercase tracking-wider">Autonomous Resolution</span>
+          <span class="text-xs font-mono text-verifiedTeal flex items-center gap-1">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+            +3.2% vs target
+          </span>
+        </div>
+        <div class="font-serif text-4xl font-normal text-white mb-2">84.6%</div>
+        <div class="w-full bg-white/5 h-1.5 rounded-full overflow-hidden mb-3">
+          <div class="bg-gradient-to-r from-civicBlue to-verifiedTeal h-full rounded-full" style="width: 84.6%"></div>
+        </div>
+        <div class="flex justify-between items-center text-xs text-mutedText font-mono">
+          <span>Total Closed: 3,491</span>
+          <span class="text-lightText">Cap: 4,120/mo</span>
+        </div>
+      </div>
+
+      <!-- Metric Card 2 -->
+      <div class="p-6 rounded-[14px] bg-surface1 card-border relative overflow-hidden group hover:border-agentViolet/40 transition-all">
+        <div class="absolute top-0 right-0 p-4 opacity-10 font-mono text-4xl text-agentViolet font-bold">02</div>
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-mono text-mutedText uppercase tracking-wider">Avg Triage Latency</span>
+          <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-verifiedTeal/10 text-verifiedTeal border border-verifiedTeal/20">Optimal</span>
+        </div>
+        <div class="font-serif text-4xl font-normal text-white mb-2">1.4s</div>
+        <div class="text-xs text-mutedText font-mono mb-3">
+          p99: 2.1s (Ingestion to Municipal Code Map)
+        </div>
+        <div class="flex items-center gap-2 pt-1 border-t border-white/5 text-[11px] text-agentViolet font-mono">
+          <span class="w-1.5 h-1.5 rounded-full bg-agentViolet"></span>
+          Sentinel-04 + GeoRouter-v3 active
+        </div>
+      </div>
+
+      <!-- Metric Card 3 -->
+      <div class="p-6 rounded-[14px] bg-surface1 card-border relative overflow-hidden group hover:border-slaAmber/40 transition-all">
+        <div class="absolute top-0 right-0 p-4 opacity-10 font-mono text-4xl text-slaAmber font-bold">03</div>
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-mono text-mutedText uppercase tracking-wider">Swarm Coordination</span>
+          <span class="text-xs font-mono text-verifiedTeal">0 Degraded</span>
+        </div>
+        <div class="font-serif text-4xl font-normal text-white mb-2">18 Agents</div>
+        <div class="text-xs text-mutedText font-mono mb-3">
+          Federated across 4 municipal emergency sectors
+        </div>
+        <div class="flex items-center justify-between pt-1 border-t border-white/5 text-[11px] font-mono text-mutedText">
+          <span>SLA Adherence: <strong class="text-white">99.4%</strong></span>
+          <span class="text-slaAmber">At Risk: 2</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 Scroll Chapters Section -->
+  <section id="resolution-engine" class="max-w-5xl mx-auto px-6 py-12">
+    <div class="border-b border-white/10 pb-8 mb-16">
+      <div class="text-xs font-mono uppercase tracking-widest text-civicBlue mb-2">Operational Architecture</div>
+      <h2 class="font-serif text-3xl sm:text-4xl text-white">Autonomous Civic Resolution Pipeline</h2>
+      <p class="text-mutedText text-sm mt-2">A tamper-evident, multi-stage protocol transforming unstructured inputs into verified municipal repairs.</p>
+    </div>
+
+    <!-- The 4 Steps -->
+    <div class="space-y-16">
+
+      <!-- Step 1: Report -->
+      <div class="flex flex-col md:flex-row gap-8 items-start relative pb-16 border-b border-white/5">
+        <div class="w-16 h-16 rounded-2xl bg-surface2 card-border flex items-center justify-center font-serif text-2xl text-civicBlue font-bold shrink-0 shadow-lg">
+          01
+        </div>
+        <div class="flex-1">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="text-xs font-mono uppercase tracking-wider text-civicBlue">Chapter 1 // Ingestion</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-white/5 text-mutedText">Multi-Modal</span>
+          </div>
+          <h3 class="font-serif text-3xl text-white font-normal mb-3">Report</h3>
+          <p class="text-mutedText leading-relaxed text-sm max-w-2xl mb-6">
+            Citizen telemetry is ingested from 311 audio gateways, mobile video, and smart sensors. Autonomous neural models synthesize raw transcripts, perform EXIF cryptographic hash validation, and strip PII in milliseconds.
+          </p>
+          <!-- Tactical preview container -->
+          <div class="p-4 rounded-xl bg-surface1 card-border max-w-xl flex items-center gap-4 text-xs font-mono">
+            <div class="w-2.5 h-2.5 rounded-full bg-verifiedTeal shrink-0"></div>
+            <div class="truncate text-lightText/90">
+              <span class="text-mutedText">Citizen Telemetry Reported:</span> "Gas line breach alert // District 4"
+            </div>
+            <span class="text-[11px] text-verifiedTeal ml-auto shrink-0 font-semibold">AUTHENTICATED</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2: Link -->
+      <div class="flex flex-col md:flex-row gap-8 items-start relative pb-16 border-b border-white/5">
+        <div class="w-16 h-16 rounded-2xl bg-surface2 card-border flex items-center justify-center font-serif text-2xl text-agentViolet font-bold shrink-0 shadow-lg">
+          02
+        </div>
+        <div class="flex-1">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="text-xs font-mono uppercase tracking-wider text-agentViolet">Chapter 2 // Correlation</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-agentViolet/10 text-agentViolet">GeoRouter-v3</span>
+          </div>
+          <h3 class="font-serif text-3xl text-white font-normal mb-3">Link</h3>
+          <p class="text-mutedText leading-relaxed text-sm max-w-2xl mb-6">
+            Intelligent spatial correlation networks cluster incoming reports within a 300-meter perimeter. Duplicates are consolidated into single master operational vectors, cross-referencing district historical utility schematics.
+          </p>
+          <!-- Tactical preview container -->
+          <div class="p-4 rounded-xl bg-surface1 card-border max-w-xl flex items-center justify-between text-xs font-mono">
+            <div class="flex items-center gap-2">
+              <span class="text-mutedText">Perimeter Cluster Scan:</span>
+              <span class="text-lightText">300m Radius Analyzed</span>
+            </div>
+            <span class="px-2 py-0.5 rounded bg-surface2 text-verifiedTeal border border-verifiedTeal/30 text-[11px]">
+              0 DUPES // MASTER CREATED
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3: Prove -->
+      <div class="flex flex-col md:flex-row gap-8 items-start relative pb-16 border-b border-white/5">
+        <div class="w-16 h-16 rounded-2xl bg-surface2 card-border flex items-center justify-center font-serif text-2xl text-verifiedTeal font-bold shrink-0 shadow-lg">
+          03
+        </div>
+        <div class="flex-1">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="text-xs font-mono uppercase tracking-wider text-verifiedTeal">Chapter 3 // Verification</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-verifiedTeal/10 text-verifiedTeal">Satellite + EXIF</span>
+          </div>
+          <h3 class="font-serif text-3xl text-white font-normal mb-3">Prove</h3>
+          <p class="text-mutedText leading-relaxed text-sm max-w-2xl mb-6">
+            Multi-modal evidence verification corroborates citizen photos with real-time satellite orbital passes and municipal sensor telemetry. AI confidence thresholds must clear 98.4% before municipal field teams are dispatched.
+          </p>
+          <!-- Tactical preview container -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl text-xs font-mono">
+            <div class="p-3 rounded-lg bg-surface1 card-border flex items-center justify-between">
+              <span class="text-mutedText">Satellite Pass:</span>
+              <span class="text-verifiedTeal">99.8% CONF</span>
+            </div>
+            <div class="p-3 rounded-lg bg-surface1 card-border flex items-center justify-between">
+              <span class="text-mutedText">SHA-256 EXIF:</span>
+              <span class="text-verifiedTeal">VERIFIED</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4: Recover -->
+      <div class="flex flex-col md:flex-row gap-8 items-start relative">
+        <div class="w-16 h-16 rounded-2xl bg-surface2 card-border flex items-center justify-center font-serif text-2xl text-slaAmber font-bold shrink-0 shadow-lg">
+          04
+        </div>
+        <div class="flex-1">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="text-xs font-mono uppercase tracking-wider text-slaAmber">Chapter 4 // Execution</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slaAmber/10 text-slaAmber">Auto-Dispatch</span>
+          </div>
+          <h3 class="font-serif text-3xl text-white font-normal mb-3">Recover</h3>
+          <p class="text-mutedText leading-relaxed text-sm max-w-2xl mb-6">
+            Autonomous work order creation routes directly to district crews with automated parts requisitions and SLA clocks. Completed repairs trigger secondary sensor sweeps to guarantee resolution before ticket closure.
+          </p>
+          <!-- Tactical preview container -->
+          <div class="p-4 rounded-xl bg-surface1 card-border max-w-xl flex items-center justify-between text-xs font-mono">
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-civicBlue"></span>
+              <span class="text-lightText">Work Order #8902 Created</span>
+            </div>
+            <span class="text-mutedText">Field Crew #08 (ETA 11 min)</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Closing Call to Action Section -->
+  <section class="max-w-7xl mx-auto px-6 py-20 relative">
+    <div class="rounded-3xl bg-gradient-to-b from-surface1 to-[#0b101c] card-border-glow p-10 md:p-16 text-center relative overflow-hidden">
+      <!-- Glow ambient backdrop -->
+      <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-96 bg-civicBlue/20 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface2 card-border text-xs font-mono text-verifiedTeal mb-6">
+          <span class="w-1.5 h-1.5 rounded-full bg-verifiedTeal"></span>
+          READY FOR REGIONAL DEPLOYMENT
+        </div>
+        <h2 class="font-serif text-4xl sm:text-5xl text-white font-normal leading-tight mb-6">
+          Upgrade your city's resolution rate from weeks to seconds.
+        </h2>
+        <p class="text-mutedText text-base sm:text-lg mb-10 max-w-xl">
+          Join forward-thinking municipal operations centers using autonomous AI agents to protect infrastructure and delight citizens.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+          <button class="w-full sm:w-auto px-8 py-4 rounded-xl bg-civicBlue hover:bg-blue-600 text-white font-semibold text-sm transition-all shadow-xl shadow-blue-500/25 flex items-center justify-center gap-2">
+            <span>Open console</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </button>
+          <button class="w-full sm:w-auto px-7 py-4 rounded-xl bg-surface2 hover:bg-[#1a243c] card-border text-lightText font-medium text-sm transition-all flex items-center justify-center gap-2">
+            <span>Schedule live municipal audit</span>
+          </button>
+        </div>
+        <div class="mt-8 text-xs font-mono text-mutedText">
+          Zero software installation required • SOC2 Type II Certified • FedRAMP High Ready
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 bg-[#060911] text-xs py-14 px-8">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+      <div>
+        <div class="flex items-center gap-3 mb-2">
+          <div class="w-6 h-6 rounded bg-surface2 card-border flex items-center justify-center text-civicBlue">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <span class="font-semibold text-white tracking-tight">CivicHelp Core</span>
+          <span class="text-mutedText font-mono">v2.4</span>
+        </div>
+        <p class="text-mutedText max-w-sm">
+          Autonomous municipal triage & tactical response intelligence. Night Operations Core.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-8 text-mutedText font-mono text-[11px]">
+        <a href="#" class="hover:text-white transition-colors">STATUS: ONLINE (FED-04)</a>
+        <a href="#" class="hover:text-white transition-colors">SECURITY ENCLAVE</a>
+        <a href="#" class="hover:text-white transition-colors">API FEDERATION</a>
+        <a href="#" class="hover:text-white transition-colors">LEGAL / PRIVACY</a>
+      </div>
+
+      <div class="text-mutedText font-mono text-[11px]">
+        &copy; 2025 CivicHelp Systems. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

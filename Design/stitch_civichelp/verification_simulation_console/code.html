@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Newsreader:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-secondary-fixed-variant":"#4f319c","surface-tint":"#adc6ff","tertiary-fixed":"#62fae3","primary":"#adc6ff","on-primary":"#002e6a","surface-container":"#1b2029","secondary-fixed-dim":"#cebdff","on-error":"#690005","secondary":"#cebdff","on-tertiary-fixed":"#00201c","secondary-fixed":"#e8ddff","surface-container-high":"#262a34","on-tertiary":"#003731","outline-variant":"#424754","on-error-container":"#ffdad6","error":"#ffb4ab","on-secondary-fixed":"#21005e","on-secondary":"#381385","surface-dim":"#0f131d","secondary-container":"#4f319c","tertiary-fixed-dim":"#3cddc7","inverse-surface":"#dfe2f0","surface-container-highest":"#31353f","on-surface":"#dfe2f0","background":"#0f131d","error-container":"#93000a","tertiary":"#3cddc7","surface-container-lowest":"#0a0e17","on-background":"#dfe2f0","primary-container":"#4d8eff","outline":"#8c909f","on-surface-variant":"#c2c6d6","inverse-primary":"#005ac2","on-primary-fixed-variant":"#004395","tertiary-container":"#00a392","inverse-on-surface":"#2c303b","surface-variant":"#31353f","on-tertiary-container":"#00302a","on-primary-container":"#00285d","primary-fixed-dim":"#adc6ff","surface-container-low":"#171c25","on-secondary-container":"#bea8ff","on-primary-fixed":"#001a42","on-tertiary-fixed-variant":"#005047","primary-fixed":"#d8e2ff","surface-bright":"#353944","surface":"#0f131d"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","margin-md":"1.5rem","margin-lg":"2rem","space-xl":"2rem","gutter-lg":"1.5rem","margin":"1rem","space-md":"1rem","gutter":"1rem","space-sm":"0.5rem","space-lg":"1.5rem"},"fontFamily":{"mono-metric":["Inter"],"label-sm":["Inter"],"body-md":["Inter"],"title-lg":["Inter"],"display-md":["Newsreader"],"body-lg":["Inter"],"display-lg-mobile":["Newsreader"],"display-lg":["Newsreader"],"label-md":["Inter"],"title-md":["Inter"],"headline-metric":["Newsreader"],"body-sm":["Inter"]},"fontSize":{"mono-metric":["12px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}],"body-md":["13px",{"lineHeight":"18px","fontWeight":"400"}],"title-lg":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-md":["32px",{"lineHeight":"38px","letterSpacing":"-0.015em","fontWeight":"400"}],"body-lg":["15px",{"lineHeight":"22px","fontWeight":"400"}],"display-lg-mobile":["36px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"400"}],"display-lg":["48px",{"lineHeight":"52px","letterSpacing":"-0.02em","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}],"title-md":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"600"}],"headline-metric":["28px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"500"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}]}}}}</script></head><body class="bg-surface-container-lowest font-body-md text-on-surface antialiased"><div class="fixed top-0 left-0 right-0 h-6 z-50 bg-surface-container-lowest/90 backdrop-blur flex items-center justify-between px-gutter-lg"><div class="flex items-center gap-space-sm"><span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span><span class="font-label-sm text-label-sm text-tertiary tracking-widest uppercase">DEMO ENVIRONMENT — SYNTHETIC DATA</span><span class="text-outline font-label-sm text-label-sm">|</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">NIGHT OPERATIONS ACTIVE // V2.4</span></div><div class="flex items-center gap-space-md"><span class="font-mono-metric text-mono-metric text-outline">NODE: US-EAST-01-FED</span><span class="font-mono-metric text-mono-metric text-tertiary">ENCRYPTED-TLS/AES256</span></div></div><aside class="fixed left-0 top-6 bottom-0 w-64 bg-surface-container-low z-40 flex flex-col justify-between p-space-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col gap-space-lg"><div><div class="flex items-center gap-space-sm mb-space-xs"><div class="w-7 h-7 rounded-lg bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary-container text-[18px]">shield_with_house</span></div><span class="font-title-md text-title-md text-on-surface font-bold tracking-tight">CivicHelp OPS</span></div><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-tertiary"></span><span class="font-mono-metric text-mono-metric text-tertiary uppercase">SYS-ONLINE // FED-04</span></div></div><div class="flex flex-col gap-space-xs"><span class="font-label-sm text-label-sm text-outline uppercase px-space-sm">Tactical Consoles</span><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-lg shadow-sm"><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="overview" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-title-md text-title-md">Overview</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="incidents" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">emergency</span><span class="font-title-md text-title-md">Incidents</span></div><span class="px-space-xs py-0.5 rounded-full bg-error-container text-on-error-container font-mono-metric text-mono-metric">14 ACTIVE</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="verification" href="#"><span class="material-symbols-outlined text-[20px]">fact_check</span><span class="font-title-md text-title-md">Verification</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="simulation" href="#"><span class="material-symbols-outlined text-[20px]">schema</span><span class="font-title-md text-title-md">Simulation</span></a></nav></div></div><div class="flex flex-col gap-space-md"><div class="flex flex-col gap-space-xs"><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="system-settings" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span class="font-body-md text-body-md">Settings &amp; Rules</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="audit-logs" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span class="font-body-md text-body-md">Audit Trail</span></a></div><div class="p-space-sm rounded-lg bg-surface-container flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col"><span class="font-title-md text-body-md text-on-surface font-medium leading-none">Dispatcher #04</span><span class="font-label-sm text-label-sm text-outline-variant mt-1">CIVIC-COMM-TAC</span></div></div><span class="material-symbols-outlined text-outline text-[18px]">lock</span></div></div></aside><div class="pl-64"><header class="fixed top-6 left-64 right-0 h-14 bg-surface-container-low/80 backdrop-blur-xl z-30 flex items-center justify-between px-gutter-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-md flex-1 max-w-xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full h-9 pl-9 pr-space-md bg-surface-container-lowest text-on-surface placeholder:text-outline font-body-sm text-body-sm rounded-lg focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search incidents by code, geofence, citizen ID..." type="text"/></div><button class="flex items-center gap-space-xs px-space-sm h-9 rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-sm text-body-sm whitespace-nowrap" type="button"><span class="material-symbols-outlined text-[16px]">filter_list</span><span>Queue: All (Priority P1-P3)</span><span class="material-symbols-outlined text-[16px]">arrow_drop_down</span></button></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container"><span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span><span class="font-mono-metric text-mono-metric text-tertiary">STREAM LIVE</span><span class="font-mono-metric text-mono-metric text-outline ml-1">142 ms</span></div><button class="flex items-center gap-space-xs px-space-sm h-8 rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md" type="button"><span class="material-symbols-outlined text-[16px]">translate</span><span>EN-US</span></button><button class="relative p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-20 px-gutter-lg pb-margin-lg bg-surface-container-lowest min-h-screen"><div class="flex flex-col w-full">
+<!-- Environmental Status Banner & Context Strip -->
+<div class="flex flex-col gap-space-sm mb-space-lg">
+<div class="flex flex-wrap items-center justify-between gap-space-sm bg-surface-container-low px-space-md py-space-xs rounded-lg">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-mono-metric text-mono-metric text-outline tracking-wider">ENCLAVE // ROUTING</span>
+<span class="text-outline-variant font-mono-metric text-mono-metric">/</span>
+<span class="font-mono-metric text-mono-metric text-on-surface tracking-wider">TACTICAL CONSOLES</span>
+<span class="text-outline-variant font-mono-metric text-mono-metric">/</span>
+<span class="font-mono-metric text-mono-metric text-tertiary uppercase">VERIFICATION &amp; SIMULATION ENCLAVE // FED-04</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-outline font-mono-metric text-mono-metric uppercase tracking-widest">GATEWAY: ETH-09</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-tertiary font-mono-metric text-mono-metric uppercase">HASH: 0x9B41..EC30</span>
+</div>
+</div>
+<!-- Header Module: Newsreader Serif Display & Quick Actions -->
+<div class="flex flex-col xl:flex-row xl:items-end justify-between gap-space-md bg-surface-container-low p-space-lg rounded-xl shadow-md">
+<div class="flex flex-col gap-space-xs max-w-3xl">
+<div class="flex items-center gap-space-sm flex-wrap mb-1">
+<span class="px-space-xs py-0.5 rounded-full bg-tertiary-container/30 text-tertiary font-label-sm text-label-sm tracking-widest uppercase flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+            VERIFICATION PIPELINE ACTIVE
+          </span>
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container/30 text-secondary font-label-sm text-label-sm tracking-widest uppercase">
+            ENCLAVE MODE: STAGED // SYNTHETIC
+          </span>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm tracking-widest uppercase">
+            CHARTER SLA AUDIT v2.4
+          </span>
+</div>
+<h1 class="font-display-md text-display-md text-on-surface tracking-tight leading-none">
+          Verification &amp; Simulation Engine
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mt-1">
+          Automated department closure adjudication, cryptographic audit checks, and synthetic operational load testing across municipal jurisdictional tiers.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm self-start xl:self-end shrink-0">
+<button class="h-9 px-space-md rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md flex items-center gap-space-xs shadow-sm transition-all active:scale-[0.98]" id="run-adjudication-btn" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">analytics</span>
+<span>Run Automated Adjudication</span>
+</button>
+<button class="h-9 px-space-md rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center gap-space-xs shadow-sm transition-all hover:brightness-110 active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[16px]">receipt_long</span>
+<span>Export Audit Ledger</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Primary Operations Grid: Two-Panel Layout (Left 7 cols / Right 5 cols on 12-col layout) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-start">
+<!-- ========================================================================= -->
+<!-- LEFT PANEL: Closure Verification (Adjudication Docket)                   -->
+<!-- ========================================================================= -->
+<section class="lg:col-span-7 flex flex-col gap-space-md bg-surface-container-low p-space-lg rounded-xl shadow-md">
+<!-- Docket Subheader Bar -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-sm gap-space-xs">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-error animate-ping"></span>
+<span class="font-mono-metric text-mono-metric text-primary uppercase tracking-wide">
+              #CIV-2024-9841 // PUBLIC WORKS DEPT CLOSURE DOCKET
+            </span>
+</div>
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider mt-0.5">
+            Department's Submitted Closure Claim vs. Autonomous Verification Ruleset
+          </p>
+</div>
+<div class="flex items-center gap-space-xs self-start sm:self-auto">
+<span class="px-space-xs py-0.5 rounded bg-error-container text-on-error-container font-mono-metric text-mono-metric font-bold">
+            STAGE: ADJUDICATED_REJECTED
+          </span>
+</div>
+</div>
+<!-- Department Claim Box -->
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">domain_verification</span>
+            Department Field Ingestion Payload
+          </span>
+<span class="font-mono-metric text-mono-metric text-tertiary">LATENCY: 142ms // AUDITED</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm pt-1">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">SUBMITTED BY</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">PW Field Crew #08 (Asphalt Div)</span>
+<span class="font-mono-metric text-mono-metric text-on-surface-variant">Foreman J. Miller [ID: 9410-X]</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">CLAIMED COMPLETION</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Today, 14:18 UTC</span>
+<span class="font-mono-metric text-mono-metric text-tertiary">DELTA: 12 mins ago</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">MUNICIPAL TICKET LINK</span>
+<span class="font-body-md text-body-md text-primary font-semibold">PW-WO-849202</span>
+<span class="font-mono-metric text-mono-metric text-outline-variant">GEOFENCE: WARD-4B-CENTRAL</span>
+</div>
+</div>
+<!-- Field Statement and Image Evidence Card -->
+<div class="flex flex-col sm:flex-row gap-space-md mt-space-xs pt-space-xs items-stretch">
+<div class="flex-1 flex flex-col justify-between p-space-sm rounded-lg bg-surface-container-lowest">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase block mb-1">Crew Action Log Narrative</span>
+<p class="font-body-md text-body-md text-on-surface italic">
+                “Cold-patch asphalt poured and tamped over trench cavity. Site cleared, road surface stabilized.”
+              </p>
+</div>
+<div class="flex items-center gap-space-sm mt-3 pt-2">
+<span class="material-symbols-outlined text-[16px] text-error">warning</span>
+<span class="font-label-sm text-label-sm text-error">Material flag: Cold-patch violates high-traffic corridor mandate.</span>
+</div>
+</div>
+<!-- Thumbnail with Photo Proof Label -->
+<div class="w-full sm:w-48 shrink-0 flex flex-col rounded-lg bg-surface-container-lowest overflow-hidden">
+<div class="relative h-28 w-full bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="A gritty close-up municipal road work inspection photograph taken under harsh late afternoon sodium street lighting, showing a hastily patched pothole on cracked gray pavement with uneven loose gravel and exposed steel rebar mesh beneath an inadequate black asphalt patch, shot with realistic digital camera artifacts and forensic telemetry tags." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTgiImSo2KltNHcMImeavGcWEU28eFIMnkWIB0gka2YPLI-GjFlqVVZAWqUcjzH3y9hwx-poR1rXsEZ5X98x8RrJZTK1v80iQMfr7pYC8OiI3jt_NPNiJQKZsnPxO_NihC5xC9p8jAer48DdgfEIbElBqiZl2fehwtrf2YJ38enSjR3xgN3BrCH7RXwiN8c5HBQNuvENur7YknRlVXNCgE32_td3nl3YYM2s04syiorunvoSjZLvmcuA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<span class="absolute top-1 left-1 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 font-mono-metric text-[10px] text-error font-bold tracking-wider">
+                FLAG: 85% BLUR
+              </span>
+<span class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 font-mono-metric text-[10px] text-outline">
+                14:17:42 UTC
+              </span>
+</div>
+<div class="p-space-xs flex flex-col">
+<span class="font-mono-metric text-mono-metric text-on-surface truncate">IMG_9104_FIELD_PROOF.JPG</span>
+<span class="font-label-sm text-label-sm text-outline truncate">Hash: e82f...a109 (EXIF attached)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Verification Checklist Matrix (5 Rigorous Checks) -->
+<div class="flex flex-col gap-space-xs mt-space-xs">
+<div class="flex items-center justify-between px-space-xs">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">
+            Autonomous Verification Matrix (Ruleset v2.4-Charter)
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono-metric">
+            2 PASSED • 2 FAILED • 1 PENDING_REVIEW
+          </span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- Check 1: Description + Photo Reference [FAILED] -->
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm hover:bg-surface-container-high transition-colors">
+<div class="flex items-start gap-space-sm">
+<div class="w-6 h-6 rounded bg-error-container text-on-error-container flex items-center justify-center shrink-0 mt-0.5 sm:mt-0">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-md text-body-lg text-on-surface font-semibold">1. Description + Photo Reference</span>
+<span class="font-mono-metric text-mono-metric text-outline-variant">ID: VR-OPT-01</span>
+</div>
+<p class="font-body-md text-body-sm text-on-surface-variant mt-0.5">
+                  Foreman note submitted, but photo metadata shows mismatched focal depth and nighttime blur exceeding 85% occlusion.
+                </p>
+</div>
+</div>
+<div class="shrink-0 self-end sm:self-center">
+<span class="px-space-xs py-1 rounded bg-error-container text-on-error-container font-mono-metric text-mono-metric font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                FAILED
+              </span>
+</div>
+</div>
+<!-- Check 2: Within 50m Proximity Lock [PASSED] -->
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm hover:bg-surface-container-high transition-colors">
+<div class="flex items-start gap-space-sm">
+<div class="w-6 h-6 rounded bg-tertiary-container text-on-tertiary-container flex items-center justify-center shrink-0 mt-0.5 sm:mt-0">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-md text-body-lg text-on-surface font-semibold">2. Within 50m Proximity Lock</span>
+<span class="font-mono-metric text-mono-metric text-outline-variant">ID: VR-GEO-09</span>
+</div>
+<p class="font-body-md text-body-sm text-on-surface-variant mt-0.5">
+                  Field device EXIF GPS coordinates: 37.7748° N, 122.4192° W (14.2m from incident pin). RTK precision confirmed.
+                </p>
+</div>
+</div>
+<div class="shrink-0 self-end sm:self-center">
+<span class="px-space-xs py-1 rounded bg-tertiary-container text-on-tertiary-container font-mono-metric text-mono-metric font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                PASSED
+              </span>
+</div>
+</div>
+<!-- Check 3: Timestamp Sequenced After Assignment [PASSED] -->
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm hover:bg-surface-container-high transition-colors">
+<div class="flex items-start gap-space-sm">
+<div class="w-6 h-6 rounded bg-tertiary-container text-on-tertiary-container flex items-center justify-center shrink-0 mt-0.5 sm:mt-0">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-md text-body-lg text-on-surface font-semibold">3. Timestamp Sequenced After Assignment</span>
+<span class="font-mono-metric text-mono-metric text-outline-variant">ID: VR-TMP-04</span>
+</div>
+<p class="font-body-md text-body-sm text-on-surface-variant mt-0.5">
+                  Work order dispatched 13:54 UTC, field closure submitted 14:18 UTC (+24 min delta). Meets temporal window.
+                </p>
+</div>
+</div>
+<div class="shrink-0 self-end sm:self-center">
+<span class="px-space-xs py-1 rounded bg-tertiary-container text-on-tertiary-container font-mono-metric text-mono-metric font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                PASSED
+              </span>
+</div>
+</div>
+<!-- Check 4: Charter Completion Terms Satisfied [FAILED] -->
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm hover:bg-surface-container-high transition-colors">
+<div class="flex items-start gap-space-sm">
+<div class="w-6 h-6 rounded bg-error-container text-on-error-container flex items-center justify-center shrink-0 mt-0.5 sm:mt-0">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-md text-body-lg text-on-surface font-semibold">4. Charter Completion Terms Satisfied</span>
+<span class="font-mono-metric text-mono-metric text-outline-variant">ID: VR-LEG-89A</span>
+</div>
+<p class="font-body-md text-body-sm text-on-surface-variant mt-0.5">
+                  Charter §89-A mandates hot-mix mastic rolling for trench depths &gt;10cm. Crew claimed cold-patch temporary fix.
+                </p>
+</div>
+</div>
+<div class="shrink-0 self-end sm:self-center">
+<span class="px-space-xs py-1 rounded bg-error-container text-on-error-container font-mono-metric text-mono-metric font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                FAILED
+              </span>
+</div>
+</div>
+<!-- Check 5: No Contradicting Citizen Reports [NEEDS REVIEW] -->
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm hover:bg-surface-container-high transition-colors">
+<div class="flex items-start gap-space-sm">
+<div class="w-6 h-6 rounded bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0 mt-0.5 sm:mt-0">
+<span class="material-symbols-outlined text-[16px]">rule</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-md text-body-lg text-on-surface font-semibold">5. No Contradicting Citizen Reports (300m / 2h)</span>
+<span class="font-mono-metric text-mono-metric text-outline-variant">ID: VR-SIG-12</span>
+</div>
+<p class="font-body-md text-body-sm text-on-surface-variant mt-0.5">
+                  Citizen telemetry #CIV-2024-9852 logged 6 mins ago reporting “Loose gravel and exposed rebar still visible”.
+                </p>
+</div>
+</div>
+<div class="shrink-0 self-end sm:self-center">
+<span class="px-space-xs py-1 rounded bg-secondary-container text-on-secondary-container font-mono-metric text-mono-metric font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                NEEDS REVIEW
+              </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Prominent Verdict Banner -->
+<div class="p-space-lg rounded-xl bg-error-container/20 flex flex-col gap-space-md shadow-lg relative overflow-hidden">
+<div class="absolute right-0 top-0 translate-x-8 -translate-y-8 w-40 h-40 bg-error/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between flex-wrap gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-error-container text-on-error-container flex items-center justify-center shadow-inner">
+<span class="material-symbols-outlined text-[20px]">block</span>
+</div>
+<span class="font-title-lg text-title-lg text-error font-bold tracking-tight">
+              VERDICT: REJECTED
+            </span>
+</div>
+<span class="font-mono-metric text-mono-metric text-on-surface-variant uppercase">
+            ENCLAVE CONFIDENCE: 99.1% ADJUDICATED
+          </span>
+</div>
+<div class="flex flex-col gap-space-xs bg-surface-container-lowest/60 p-space-sm rounded-lg">
+<span class="font-label-sm text-label-sm text-error uppercase tracking-wider font-semibold">Key Rejection Grounds</span>
+<ul class="flex flex-col gap-1 text-on-surface font-body-sm text-body-sm">
+<li class="flex items-start gap-space-xs">
+<span class="text-error font-bold">•</span>
+<span><strong>1. Structural specification failure:</strong> Cold-patch violates Charter §89-A depth standards for primary transit arterials.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="text-error font-bold">•</span>
+<span><strong>2. Corroborating contradiction:</strong> Live citizen report #CIV-2024-9852 indicates active hazard on coordinates at 14:24 UTC.</span>
+</li>
+</ul>
+</div>
+<!-- Critical Optical Discrepancy Note Box -->
+<div class="p-space-sm rounded-lg bg-surface-container flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">center_focus_strong</span>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-semibold">
+              Photo reference is not visual proof.
+            </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Autonomous optical analysis score: <strong>32% structural integrity confidence</strong>. Underlying rebar matrix remains unresolved under machine vision pass.
+            </p>
+</div>
+</div>
+<!-- Adjudication Tactical Action Buttons -->
+<div class="flex flex-wrap items-center gap-space-sm pt-space-xs">
+<button class="h-9 px-space-md rounded-lg bg-error-container text-on-error-container hover:bg-error hover:text-on-error font-label-md text-label-md flex items-center gap-space-xs font-bold shadow transition-all active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[16px]">replay</span>
+<span>Reject &amp; Re-dispatch Field Crew</span>
+</button>
+<button class="h-9 px-space-md rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md flex items-center gap-space-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">supervisor_account</span>
+<span>Request Supervisor Manual Override</span>
+</button>
+<button class="h-9 px-space-md rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-md text-label-md flex items-center gap-space-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>View Photographic Discrepancy</span>
+</button>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- RIGHT PANEL: Simulation Mode (Synthetic Testbed & Analytics)              -->
+<!-- ========================================================================= -->
+<section class="lg:col-span-5 flex flex-col gap-space-md bg-surface-container-low p-space-lg rounded-xl shadow-md">
+<!-- Simulation Header -->
+<div class="flex flex-col gap-space-xs pb-space-sm">
+<div class="flex items-center justify-between flex-wrap gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-3 h-3 rounded bg-secondary flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-on-secondary"></span>
+</div>
+<h2 class="font-headline-metric text-headline-metric text-on-surface leading-none">
+              Simulation Mode
+            </h2>
+</div>
+<div class="flex items-center gap-1">
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-secondary font-mono-metric text-mono-metric font-semibold">
+              SANDBOX: WARD-4B-SIM
+            </span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          Inject synthetic civic vectors, manipulate operational clocks, and stress-test autonomous agent dispatchers.
+        </p>
+</div>
+<!-- Tactical Simulation Control Buttons Matrix -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider px-space-xs">
+          Synthetic Injection &amp; Clock Controls
+        </span>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs">
+<!-- Seed Demo Data -->
+<button class="h-10 px-space-sm rounded-lg bg-primary text-on-primary hover:brightness-110 font-label-md text-label-md flex items-center justify-between shadow-sm transition-all active:scale-[0.98]" id="btn-seed-demo" type="button">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px]">database</span>
+<span>Seed Demo Data</span>
+</span>
+<span class="font-mono-metric text-[10px] opacity-80">+50 TIX</span>
+</button>
+<!-- Seed Pothole Scenario -->
+<button class="h-10 px-space-sm rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md flex items-center justify-between shadow-sm transition-all active:scale-[0.98]" id="btn-seed-pothole" type="button">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary">warning</span>
+<span>Seed Pothole Scenario</span>
+</span>
+<span class="font-mono-metric text-[10px] text-secondary">P1 CRIT</span>
+</button>
+<!-- Submit Bad Closure (Feeds into left verification docket!) -->
+<button class="h-10 px-space-sm rounded-lg bg-error-container text-on-error-container hover:bg-error hover:text-on-error font-label-md text-label-md flex items-center justify-between shadow-sm transition-all active:scale-[0.98]" id="btn-submit-bad-closure" type="button">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px]">rule_folder</span>
+<span>Submit Bad Closure</span>
+</span>
+<span class="font-mono-metric text-[10px] font-bold">INJECT</span>
+</button>
+<!-- Advance Time +2h -->
+<button class="h-10 px-space-sm rounded-lg bg-surface-container text-secondary hover:bg-surface-container-high font-label-md text-label-md flex items-center justify-between shadow-sm transition-all active:scale-[0.98]" id="btn-advance-time" type="button">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px]">fast_forward</span>
+<span>Advance Time +2h</span>
+</span>
+<span class="font-mono-metric text-[10px] text-tertiary">SLA WARP</span>
+</button>
+<!-- Trigger Department Outage -->
+<button class="h-10 px-space-sm rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md flex items-center justify-between shadow-sm transition-all active:scale-[0.98] sm:col-span-2" id="btn-trigger-outage" type="button">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-tertiary">bolt</span>
+<span>Trigger Department Outage (Telemetry Silent)</span>
+</span>
+<span class="font-mono-metric text-[10px] text-outline">PW CLUSTER 04</span>
+</button>
+</div>
+<!-- Reset Simulation (Ghost Button & Confirmation Trigger) -->
+<div class="mt-space-xs flex flex-col gap-space-xs">
+<button class="h-9 px-space-sm rounded-lg bg-surface-container text-error hover:bg-surface-container-high font-label-md text-label-md flex items-center justify-center gap-space-xs transition-colors" id="btn-reset-sim" type="button">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+<span>Reset Simulation State to Baseline Seed</span>
+</button>
+<!-- Inline Confirmation Dialog Box for Reset -->
+<div class="hidden p-space-sm rounded-lg bg-surface-container-lowest flex flex-col gap-space-sm" id="reset-confirm-box">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-error text-[18px] mt-0.5 shrink-0">report_problem</span>
+<div class="flex flex-col">
+<span class="font-title-md text-body-md text-on-surface font-semibold">Reset Sandbox State?</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  All synthetic reports, pending SLA clocks, and agent queues will revert to baseline seed.
+                </p>
+</div>
+</div>
+<div class="flex items-center justify-end gap-space-xs">
+<button class="h-7 px-space-sm rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm" id="btn-cancel-reset" type="button">
+                Cancel
+              </button>
+<button class="h-7 px-space-sm rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-bold hover:brightness-110" id="btn-confirm-reset" type="button">
+                Confirm Hard Reset
+              </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Department Performance Bar Chart Section -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-title-md text-body-lg text-on-surface font-semibold">
+              Department Closure Adjudication Rate
+            </span>
+<span class="font-mono-metric text-mono-metric text-tertiary">LAST 30 DAYS</span>
+</div>
+<p class="font-label-sm text-label-sm text-outline">
+            Autonomous Acceptance (Teal) vs. Human/Agent Rejection Rate (Red)
+          </p>
+</div>
+<!-- Comparative Chart Bars -->
+<div class="flex flex-col gap-space-sm p-space-md rounded-xl bg-surface-container">
+<!-- Row 1: Public Works (Asphalt) -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-semibold">Public Works (Asphalt)</span>
+<span class="font-mono-metric text-mono-metric text-on-surface-variant">68% Acc • <span class="text-error font-bold">32% Rej</span></span>
+</div>
+<div class="h-2 w-full bg-surface-container-lowest rounded-full overflow-hidden flex">
+<div class="h-full bg-tertiary rounded-l-full" style="width: 68%;"></div>
+<div class="h-full bg-error rounded-r-full" style="width: 32%;"></div>
+</div>
+</div>
+<!-- Row 2: Water & Sanitation -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-semibold">Water &amp; Sanitation</span>
+<span class="font-mono-metric text-mono-metric text-on-surface-variant">89% Acc • <span class="text-error">11% Rej</span></span>
+</div>
+<div class="h-2 w-full bg-surface-container-lowest rounded-full overflow-hidden flex">
+<div class="h-full bg-tertiary rounded-l-full" style="width: 89%;"></div>
+<div class="h-full bg-error rounded-r-full" style="width: 11%;"></div>
+</div>
+</div>
+<!-- Row 3: Electrical Grid -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-semibold">Electrical Grid &amp; Lighting</span>
+<span class="font-mono-metric text-mono-metric text-on-surface-variant">94% Acc • <span class="text-error">6% Rej</span></span>
+</div>
+<div class="h-2 w-full bg-surface-container-lowest rounded-full overflow-hidden flex">
+<div class="h-full bg-tertiary rounded-l-full" style="width: 94%;"></div>
+<div class="h-full bg-error rounded-r-full" style="width: 6%;"></div>
+</div>
+</div>
+<!-- Row 4: Traffic & Signals -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-semibold">Traffic &amp; Signals</span>
+<span class="font-mono-metric text-mono-metric text-on-surface-variant">76% Acc • <span class="text-error font-bold">24% Rej</span></span>
+</div>
+<div class="h-2 w-full bg-surface-container-lowest rounded-full overflow-hidden flex">
+<div class="h-full bg-tertiary rounded-l-full" style="width: 76%;"></div>
+<div class="h-full bg-error rounded-r-full" style="width: 24%;"></div>
+</div>
+</div>
+<!-- Row 5: Parks & Recreation -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-semibold">Parks &amp; Recreation</span>
+<span class="font-mono-metric text-mono-metric text-on-surface-variant">91% Acc • <span class="text-error">9% Rej</span></span>
+</div>
+<div class="h-2 w-full bg-surface-container-lowest rounded-full overflow-hidden flex">
+<div class="h-full bg-tertiary rounded-l-full" style="width: 91%;"></div>
+<div class="h-full bg-error rounded-r-full" style="width: 9%;"></div>
+</div>
+</div>
+<!-- Legend Bar -->
+<div class="flex items-center justify-between pt-space-xs text-outline font-label-sm text-label-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span>Autonomous Accepted</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-error"></span>
+<span>Audit Rejected</span>
+</div>
+</div>
+</div>
+<!-- Telemetry Impact Callouts -->
+<div class="grid grid-cols-2 gap-space-xs mt-space-xs">
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Premature Closure Defense</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-metric text-headline-metric text-tertiary font-bold">28.4%</span>
+<span class="font-mono-metric text-mono-metric text-on-surface-variant">saves</span>
+</div>
+<span class="font-mono-metric text-[11px] text-tertiary mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+              142 bogus claims blocked
+            </span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Rework Cost Averted</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-metric text-headline-metric text-primary font-bold">$148,200</span>
+<span class="font-mono-metric text-mono-metric text-on-surface-variant">YTD</span>
+</div>
+<span class="font-mono-metric text-[11px] text-primary mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">trending_up</span>
+              +14.2% vs last municipal qtr
+            </span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Interactive JavaScript Micro-interactions -->
+<script>
+    (function initVerificationConsole() {
+      const resetBtn = document.getElementById('btn-reset-sim');
+      const resetBox = document.getElementById('reset-confirm-box');
+      const cancelResetBtn = document.getElementById('btn-cancel-reset');
+      const confirmResetBtn = document.getElementById('btn-confirm-reset');
+      const submitBadClosureBtn = document.getElementById('btn-submit-bad-closure');
+      const runAdjudicationBtn = document.getElementById('run-adjudication-btn');
+
+      if (resetBtn && resetBox) {
+        resetBtn.addEventListener('click', () => {
+          resetBox.classList.remove('hidden');
+        });
+      }
+
+      if (cancelResetBtn && resetBox) {
+        cancelResetBtn.addEventListener('click', () => {
+          resetBox.classList.add('hidden');
+        });
+      }
+
+      if (confirmResetBtn && resetBox) {
+        confirmResetBtn.addEventListener('click', () => {
+          confirmResetBtn.textContent = 'Resetting...';
+          setTimeout(() => {
+            resetBox.classList.add('hidden');
+            confirmResetBtn.textContent = 'Confirm Hard Reset';
+          }, 600);
+        });
+      }
+
+      if (submitBadClosureBtn) {
+        submitBadClosureBtn.addEventListener('click', () => {
+          submitBadClosureBtn.classList.add('scale-95');
+          setTimeout(() => submitBadClosureBtn.classList.remove('scale-95'), 150);
+        });
+      }
+
+      if (runAdjudicationBtn) {
+        runAdjudicationBtn.addEventListener('click', () => {
+          runAdjudicationBtn.classList.add('opacity-70');
+          setTimeout(() => runAdjudicationBtn.classList.remove('opacity-70'), 400);
+        });
+      }
+    })();
+  </script>
+</div></main></div></body></html>

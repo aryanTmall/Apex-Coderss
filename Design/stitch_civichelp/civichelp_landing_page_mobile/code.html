@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CivicHelp — Mobile Landing Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            night: '#070B14',
+            surface1: '#0F1626',
+            surface2: '#151D30',
+            civicBlue: '#3B82F6',
+            verifiedTeal: '#2DD4BF',
+            slaAmber: '#F59E0B',
+            alertRed: '#F43F5E',
+            agentViolet: '#A78BFA',
+            mutedText: '#8B95A9',
+            lightText: '#E6EAF2'
+          },
+          fontFamily: {
+            serif: ['Newsreader', 'Georgia', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #070B14;
+      color: #E6EAF2;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    .card-border {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .card-border-glow {
+      border: 1px solid rgba(59, 130, 246, 0.25);
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+    }
+    .grid-lines {
+      background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+  </style>
+</head>
+<body class="bg-night antialiased selection:bg-civicBlue selection:text-white max-w-[430px] mx-auto min-h-screen border-x border-white/5 pb-20">
+
+  <!-- Top Synthetic Data Banner -->
+  <div class="w-full bg-[#0a0f1d] border-b border-white/5 py-1 px-3 text-center sticky top-0 z-50">
+    <div class="inline-flex items-center gap-1.5 text-[10px] font-mono tracking-wider text-slaAmber uppercase">
+      <span class="w-1.5 h-1.5 rounded-full bg-slaAmber animate-pulse"></span>
+      Demo Environment — Synthetic Data
+    </div>
+  </div>
+
+  <!-- Mobile Sticky Glass Nav -->
+  <header class="sticky top-6 z-40 backdrop-blur-xl bg-[#070B14]/85 border-b border-white/10 px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <div class="w-7 h-7 rounded-lg bg-surface2 card-border flex items-center justify-center text-civicBlue">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      </div>
+      <div>
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-white">CivicHelp</span>
+          <span class="px-1 text-[8px] font-mono rounded bg-white/5 text-mutedText border border-white/10">v2.4</span>
+        </div>
+      </div>
+    </div>
+    <button class="px-3 py-1.5 rounded-lg bg-civicBlue text-white text-xs font-medium shadow-md shadow-blue-500/20 flex items-center gap-1">
+      <span>Open console</span>
+    </button>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative px-5 pt-8 pb-12 overflow-hidden">
+    <div class="absolute inset-0 grid-lines opacity-30 pointer-events-none"></div>
+
+    <!-- 3D Night-City Background Placeholder Vector -->
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
+      <svg class="w-full h-full" viewBox="0 0 400 350" fill="none">
+        <polygon points="120,200 200,160 280,200 200,240" fill="#0F1626" stroke="#3B82F6" stroke-width="1"/>
+        <polygon points="150,150 200,125 250,150 200,175" fill="#151D30" stroke="#A78BFA" stroke-width="1"/>
+        <line x1="50" y1="300" x2="200" y2="160" stroke="#3B82F6" stroke-width="0.8" stroke-dasharray="3 3"/>
+        <line x1="350" y1="300" x2="200" y2="160" stroke="#2DD4BF" stroke-width="0.8" stroke-dasharray="3 3"/>
+        <circle cx="200" cy="160" r="4" fill="#2DD4BF"/>
+      </svg>
+    </div>
+
+    <div class="relative z-10 flex flex-col items-start">
+      <!-- Tag Pill -->
+      <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface1 card-border text-[11px] mb-5 text-lightText">
+        <span class="w-1.5 h-1.5 rounded-full bg-agentViolet"></span>
+        <span class="font-mono text-agentViolet">AUTONOMOUS DISPATCH</span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="font-serif text-3xl font-normal tracking-tight text-white leading-tight mb-4">
+        From citizen reports to <span class="italic text-transparent bg-clip-text bg-gradient-to-r from-white to-civicBlue">verified outcomes</span>.
+      </h1>
+
+      <!-- One-line subhead -->
+      <p class="text-xs text-mutedText leading-relaxed mb-6">
+        Autonomous multi-modal civic triage, automated field dispatch, and cryptographically verified resolutions for modern municipalities.
+      </p>
+
+      <!-- Buttons -->
+      <div class="w-full flex flex-col gap-2.5 mb-8">
+        <button class="w-full py-3 rounded-xl bg-civicBlue text-white text-xs font-semibold shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2">
+          <span>Open console</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </button>
+        <button class="w-full py-2.5 rounded-xl bg-surface2 card-border text-lightText text-xs font-medium flex items-center justify-center gap-2">
+          <svg class="w-3 h-3 text-white fill-current" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <span>Watch the live demo</span>
+        </button>
+      </div>
+
+      <!-- Live badge -->
+      <div class="w-full p-2.5 rounded-lg bg-surface1 card-border flex items-center justify-between text-[10px] font-mono">
+        <span class="text-verifiedTeal flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-verifiedTeal"></span>
+          SYS-ONLINE // OPS 04
+        </span>
+        <span class="text-mutedText">P0 Risk: 00:14:23 to breach</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Metric Cards (Row / Stack) -->
+  <section class="px-5 mb-10">
+    <div class="flex items-center justify-between mb-3">
+      <span class="text-[11px] font-mono text-mutedText uppercase tracking-wider">Operational Core</span>
+      <span class="px-2 py-0.5 rounded text-[9px] font-mono bg-verifiedTeal/10 text-verifiedTeal border border-verifiedTeal/20">
+        from live data
+      </span>
+    </div>
+
+    <div class="space-y-3">
+      <!-- Card 1 -->
+      <div class="p-4 rounded-xl bg-surface1 card-border">
+        <div class="flex items-center justify-between text-[11px] font-mono mb-1">
+          <span class="text-mutedText">Autonomous Resolution</span>
+          <span class="text-verifiedTeal">+3.2% vs target</span>
+        </div>
+        <div class="font-serif text-2xl text-white">84.6%</div>
+        <div class="w-full bg-white/5 h-1 rounded-full overflow-hidden mt-2 mb-2">
+          <div class="bg-gradient-to-r from-civicBlue to-verifiedTeal h-full" style="width: 84.6%"></div>
+        </div>
+        <div class="text-[10px] font-mono text-mutedText flex justify-between">
+          <span>3,491 Closed</span>
+          <span>Target: 4,120</span>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="p-4 rounded-xl bg-surface1 card-border">
+        <div class="flex items-center justify-between text-[11px] font-mono mb-1">
+          <span class="text-mutedText">Avg Triage Latency</span>
+          <span class="text-verifiedTeal">Optimal</span>
+        </div>
+        <div class="font-serif text-2xl text-white">1.4s</div>
+        <div class="text-[10px] font-mono text-mutedText mt-1">p99: 2.1s (Ingestion to Municipal Code)</div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="p-4 rounded-xl bg-surface1 card-border">
+        <div class="flex items-center justify-between text-[11px] font-mono mb-1">
+          <span class="text-mutedText">Swarm Units</span>
+          <span class="text-verifiedTeal">0 Degraded</span>
+        </div>
+        <div class="font-serif text-2xl text-white">18 Agents</div>
+        <div class="text-[10px] font-mono text-mutedText mt-1">SLA Adherence: 99.4% • 2 At Risk</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 Scroll Chapters -->
+  <section class="px-5 mb-12">
+    <div class="border-b border-white/10 pb-4 mb-6">
+      <div class="text-[10px] font-mono uppercase tracking-widest text-civicBlue">Architecture</div>
+      <h2 class="font-serif text-2xl text-white font-normal">Resolution Pipeline</h2>
+    </div>
+
+    <div class="space-y-6">
+      <!-- 1 Report -->
+      <div class="p-4 rounded-xl bg-surface1 card-border">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-7 h-7 rounded-lg bg-surface2 card-border flex items-center justify-center font-serif text-sm text-civicBlue font-bold">1</span>
+          <span class="text-xs font-mono uppercase tracking-wider text-civicBlue">Report</span>
+        </div>
+        <p class="text-xs text-mutedText leading-relaxed">
+          Citizen telemetry is ingested from 311 audio gateways, mobile video, and smart sensors. Autonomous neural models synthesize raw transcripts, perform EXIF cryptographic hash validation, and strip PII in milliseconds.
+        </p>
+      </div>
+
+      <!-- 2 Link -->
+      <div class="p-4 rounded-xl bg-surface1 card-border">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-7 h-7 rounded-lg bg-surface2 card-border flex items-center justify-center font-serif text-sm text-agentViolet font-bold">2</span>
+          <span class="text-xs font-mono uppercase tracking-wider text-agentViolet">Link</span>
+        </div>
+        <p class="text-xs text-mutedText leading-relaxed">
+          Intelligent spatial correlation networks cluster incoming reports within a 300-meter perimeter. Duplicates are consolidated into single master operational vectors, cross-referencing district historical utility schematics.
+        </p>
+      </div>
+
+      <!-- 3 Prove -->
+      <div class="p-4 rounded-xl bg-surface1 card-border">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-7 h-7 rounded-lg bg-surface2 card-border flex items-center justify-center font-serif text-sm text-verifiedTeal font-bold">3</span>
+          <span class="text-xs font-mono uppercase tracking-wider text-verifiedTeal">Prove</span>
+        </div>
+        <p class="text-xs text-mutedText leading-relaxed">
+          Multi-modal evidence verification corroborates citizen photos with real-time satellite orbital passes and municipal sensor telemetry. AI confidence thresholds must clear 98.4% before municipal field teams are dispatched.
+        </p>
+      </div>
+
+      <!-- 4 Recover -->
+      <div class="p-4 rounded-xl bg-surface1 card-border">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-7 h-7 rounded-lg bg-surface2 card-border flex items-center justify-center font-serif text-sm text-slaAmber font-bold">4</span>
+          <span class="text-xs font-mono uppercase tracking-wider text-slaAmber">Recover</span>
+        </div>
+        <p class="text-xs text-mutedText leading-relaxed">
+          Autonomous work order creation routes directly to district crews with automated parts requisitions and SLA clocks. Completed repairs trigger secondary sensor sweeps to guarantee resolution before ticket closure.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Box -->
+  <section class="px-5 mb-10">
+    <div class="p-6 rounded-2xl bg-gradient-to-b from-surface1 to-[#0b101c] card-border-glow text-center">
+      <div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface2 card-border text-[10px] font-mono text-verifiedTeal mb-4">
+        <span class="w-1.5 h-1.5 rounded-full bg-verifiedTeal"></span>
+        REGIONAL READY
+      </div>
+      <h3 class="font-serif text-2xl text-white font-normal mb-3">
+        From weeks to seconds.
+      </h3>
+      <p class="text-xs text-mutedText mb-5 leading-relaxed">
+        Autonomous AI agents for municipal operations centers protecting infrastructure and citizens.
+      </p>
+      <button class="w-full py-3 rounded-xl bg-civicBlue text-white text-xs font-semibold shadow-lg shadow-blue-500/25 flex items-center justify-center gap-1.5">
+        <span>Open console</span>
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- Mobile Footer -->
+  <footer class="px-5 py-6 border-t border-white/10 text-center font-mono text-[10px] text-mutedText">
+    <div>CivicHelp Systems // Night Operations Core v2.4</div>
+    <div class="mt-1 text-white/40">Demo Environment — Synthetic Data</div>
+  </footer>
+
+</body>
+</html>
