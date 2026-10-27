@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: civichelp-backend
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: DATABASE_URL
+        value: sqlite:///./civichelp.db
+      - key: DEMO_MODE
+        value: "true"
+      - key: GEMINI_MODEL
+        value: gemini-3.8-flash
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: ADMIN_INITIAL_EMAIL
+        value: admin@civichelp.gov.in
+      - key: ADMIN_INITIAL_PASSWORD
+        value: CivicHelp@Admin2026!
