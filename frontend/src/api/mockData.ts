@@ -5,6 +5,7 @@ import {
   Hotspot,
   AuditEvent,
   MunicipalFundsSummary,
+  WardBudgetItem,
   CommunityProposalItem,
   RewardCatalogItem,
   NewsArticle
@@ -360,6 +361,43 @@ export const MOCK_MUNICIPAL_FUNDS: MunicipalFundsSummary = {
   is_synthetic_notice: 'Verified Fiscal Registry Synchronization'
 };
 
+export const MOCK_WARD_BUDGETS: WardBudgetItem[] = [
+  {
+    ward_id: 'W-112',
+    ward_number: '112',
+    ward_name: 'Domlur & Indiranagar Ward',
+    zone: 'East Zone',
+    city: 'Bengaluru',
+    councillor_name: 'K. S. Narayanswamy',
+    population: 48500,
+    approved_budget: 45000000,
+    allocated_amount: 40000000,
+    funds_released: 32000000,
+    expenditure_recorded: 28500000,
+    remaining_balance: 11500000,
+    utilization_pct: 89.06,
+    active_projects_count: 2,
+    completed_projects_count: 4
+  },
+  {
+    ward_id: 'W-148',
+    ward_number: '148',
+    ward_name: 'Koramangala Valley Ward',
+    zone: 'South Zone',
+    city: 'Bengaluru',
+    councillor_name: 'A. R. Ramesh Babu',
+    population: 62000,
+    approved_budget: 52000000,
+    allocated_amount: 45000000,
+    funds_released: 36000000,
+    expenditure_recorded: 29800000,
+    remaining_balance: 15200000,
+    utilization_pct: 82.78,
+    active_projects_count: 3,
+    completed_projects_count: 5
+  }
+];
+
 export const MOCK_PROPOSALS: CommunityProposalItem[] = [
   {
     id: 'PROP-01',
@@ -470,5 +508,92 @@ export const MOCK_NEWS: NewsArticle[] = [
     retrieved_at: new Date().toISOString(),
     ai_summary: 'CivicHelp AI Analysis: Direct correlation with ongoing drain blockage reports. Reports classified under WATERLOGGING_FLOOD are now prioritized.',
     related_incident_count: 1
+  }
+];
+
+export const MOCK_OPERATIONAL_FEED = [
+  {
+    id: 'ALERT-01',
+    severity: 'CRITICAL',
+    event_type: 'OVERDUE_SLA',
+    status: 'PENDING_ACTION',
+    timestamp: new Date(Date.now() - 1800000).toISOString(),
+    title: 'SLA Breach: Main Water Pipe Burst on 80ft Road',
+    explanation: 'Incident #INC-2026-003 exceeded the 4-hour critical resolution window. Soil erosion risk elevated.',
+    tracking_id: 'REP-BLR-003',
+    department_id: 'DEP-WATER',
+    ward_id: 'W-148',
+    data_origin: 'Automated Telemetry Engine',
+    action_url: '/government/incidents/INC-2026-003'
+  },
+  {
+    id: 'ALERT-02',
+    severity: 'HIGH',
+    event_type: 'FAILED_CLOSURE',
+    status: 'PENDING_ACTION',
+    timestamp: new Date(Date.now() - 3600000).toISOString(),
+    title: 'Closure Rejected: Pothole Repair Photo Deviation > 50m',
+    explanation: 'Contractor uploaded post-repair proof from 120m away from coordinates. Auto-reopened and escalated.',
+    tracking_id: 'REP-BLR-001',
+    department_id: 'DEP-ROADS',
+    ward_id: 'W-112',
+    data_origin: 'Cryptographic Geofence Audit',
+    action_url: '/government/incidents/INC-2026-001'
+  },
+  {
+    id: 'ALERT-03',
+    severity: 'HIGH',
+    event_type: 'SPATIAL_HOTSPOT',
+    status: 'PENDING_ACTION',
+    timestamp: new Date(Date.now() - 5400000).toISOString(),
+    title: 'Cluster Alert: 18 Incidents in Indiranagar Node',
+    explanation: 'Density threshold exceeded within 450m radius. PWD cold-mix crew dispatch recommended.',
+    tracking_id: 'HOT-01',
+    department_id: 'DEP-ROADS',
+    ward_id: 'W-112',
+    data_origin: 'Spatial Hotspot Classifier',
+    action_url: '/government/hotspots'
+  },
+  {
+    id: 'ALERT-04',
+    severity: 'MEDIUM',
+    event_type: 'SLA_APPROACHING',
+    status: 'PENDING_ACTION',
+    timestamp: new Date(Date.now() - 7200000).toISOString(),
+    title: 'SLA Expiring in 2h: 4 Broken Streetlights at Metro Gate',
+    explanation: 'Incident #INC-2026-002 assigned to City Grid Electricals is at 80% SLA elapsed time.',
+    tracking_id: 'REP-BLR-002',
+    department_id: 'DEP-LIGHTS',
+    ward_id: 'W-112',
+    data_origin: 'SLA Monitoring Worker',
+    action_url: '/government/incidents/INC-2026-002'
+  }
+];
+
+export const MOCK_PROJECTS = [
+  {
+    id: 'PRJ-2026-01',
+    project_code: 'MUNI-W112-RD01',
+    name: 'Domlur-Indiranagar Asphalt Milling and Surface Re-carpeting',
+    description: 'Complete cold-planing of worn road surface and application of 50mm dense bituminous macadam.',
+    ward_id: 'W-112',
+    ward_number: '112',
+    ward_name: 'Domlur & Indiranagar Ward',
+    department_id: 'DEP-ROADS',
+    financial_year: '2025-2026',
+    sanctioned_amount: 18500000,
+    funds_allocated: 18500000,
+    funds_released: 14800000,
+    actual_expenditure: 12200000,
+    balance_amount: 3700000,
+    contractor_name: 'Apex Roadways Infrastructure Corp',
+    contractor_id: 'CONT-APEX-01',
+    status: 'IN_PROGRESS',
+    progress_percentage: 65.0,
+    milestones: [],
+    start_date: new Date(Date.now() - 86400000 * 45).toISOString(),
+    expected_completion_date: new Date(Date.now() + 86400000 * 30).toISOString(),
+    created_at: new Date(Date.now() - 86400000 * 60).toISOString(),
+    updated_at: new Date().toISOString()
   }
 ];

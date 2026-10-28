@@ -43,16 +43,16 @@ export const DashboardPage: React.FC = () => {
   const loadData = async () => {
     setIsRefreshing(true);
     try {
-      const [incs, mets, evts, hs] = await Promise.all([
+      const [incsRes, metsRes, evtsRes, hsRes] = await Promise.allSettled([
         api.getIncidents({ search: searchFilter || undefined, limit: 600 }),
         api.getMetrics(),
         api.getAuditEvents(12),
         api.getHotspots(),
       ]);
-      setIncidents(incs);
-      setMetrics(mets);
-      setAuditEvents(evts);
-      setHotspots(hs);
+      if (incsRes.status === 'fulfilled' && incsRes.value) setIncidents(incsRes.value);
+      if (metsRes.status === 'fulfilled' && metsRes.value) setMetrics(metsRes.value);
+      if (evtsRes.status === 'fulfilled' && evtsRes.value) setAuditEvents(evtsRes.value);
+      if (hsRes.status === 'fulfilled' && hsRes.value) setHotspots(hsRes.value);
     } catch (err) {
       console.error('Failed to load dashboard data:', err);
     } finally {
