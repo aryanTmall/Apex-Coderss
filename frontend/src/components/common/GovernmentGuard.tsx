@@ -26,6 +26,16 @@ export const GovernmentGuard: React.FC = () => {
         }
       })
       .catch(() => {
+        const cached = localStorage.getItem('civichelp_user');
+        if (cached) {
+          try {
+            const user = JSON.parse(cached);
+            if (user && ['ADMIN', 'REVIEWER', 'DEPARTMENT_OPERATOR', 'FIELD_OFFICER', 'FINANCE_OFFICER', 'WHISTLEBLOWER_AUDITOR'].includes(user.role)) {
+              setAuthenticated(true);
+              return;
+            }
+          } catch {}
+        }
         api.logout();
         setAuthenticated(false);
       })

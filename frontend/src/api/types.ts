@@ -417,7 +417,7 @@ export interface UserProfile {
   id: string;
   email: string;
   full_name: string;
-  role: 'ADMIN' | 'REVIEWER' | 'DEPARTMENT_OPERATOR' | 'FIELD_OFFICER' | 'CITIZEN';
+  role: 'ADMIN' | 'REVIEWER' | 'DEPARTMENT_OPERATOR' | 'FIELD_OFFICER' | 'CITIZEN' | 'FINANCE_OFFICER' | 'WHISTLEBLOWER_AUDITOR';
   department_id?: string | null;
 }
 
