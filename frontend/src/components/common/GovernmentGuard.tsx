@@ -19,7 +19,7 @@ export const GovernmentGuard: React.FC = () => {
 
     api.getProfile()
       .then((user) => {
-        if (user && ['ADMIN', 'REVIEWER', 'DEPARTMENT_OPERATOR', 'FIELD_OFFICER'].includes(user.role)) {
+        if (user && ['ADMIN', 'REVIEWER', 'DEPARTMENT_OPERATOR', 'FIELD_OFFICER', 'FINANCE_OFFICER', 'WHISTLEBLOWER_AUDITOR'].includes(user.role)) {
           setAuthenticated(true);
         } else {
           setAuthenticated(false);
