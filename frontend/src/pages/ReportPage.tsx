@@ -206,6 +206,25 @@ export const ReportPage: React.FC = () => {
       return;
     }
 
+    // Client-side Instant Verification: Detect Generative AI filename patterns
+    const lowerName = file.name.toLowerCase();
+    const aiKeywords = [
+      'dalle', 'dall-e', 'dall_e', 'midjourney', 'mid-journey',
+      'stablediffusion', 'stable_diffusion', 'sdxl', 'flux',
+      'synthetic', 'generated', 'civitai', 'comfyui', 'deepai',
+      'bing_creator', 'chatgpt_image', 'fake', 'genai', 'prompt'
+    ];
+    const isAiName = aiKeywords.some(kw => {
+      const reg = new RegExp(`(^|[\\W_])${kw}([\\W_]|$)`, 'i');
+      return reg.test(lowerName);
+    });
+
+    if (isAiName) {
+      setFilePreview(null);
+      setUploadError('⚠️ Synthetic / AI-Generated Image Rejected: File matches generative AI indicators. CivicHelp strictly requires authentic on-site photographs taken with a physical camera.');
+      return;
+    }
+
     setIsHashing(true);
     setUploadError(null);
 

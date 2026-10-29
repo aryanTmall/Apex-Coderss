@@ -1,3 +1,6 @@
+import os
+from app.config import settings
+from app.services.image_authenticity_service import image_authenticity_service
 import uuid
 import re
 from datetime import timezone
@@ -152,6 +155,47 @@ class ClosureVerificationService:
                 "explanation": f"{contradicting} new citizen reports submitted after closure claim indicating unresolved issue."
             }
 
+        # 6. ai_authenticity_check
+        if photo_ref:
+            photo_bytes = b""
+            possible_paths = [
+                os.path.join(getattr(settings, 'UPLOAD_DIR', 'uploads'), photo_ref),
+                os.path.join(getattr(settings, 'UPLOAD_DIR', 'uploads'), os.path.basename(photo_ref)),
+            ]
+            for p in possible_paths:
+                if os.path.exists(p):
+                    try:
+                        with open(p, "rb") as f:
+                            photo_bytes = f.read()
+                        break
+                    except Exception:
+                        pass
+            auth_res = image_authenticity_service.verify_authenticity(
+                image_bytes=photo_bytes,
+                filename=photo_ref
+            )
+            if auth_res["verdict"] == "REJECTED":
+                checks["ai_authenticity_check"] = {
+                    "name": "ai_authenticity_check",
+                    "status": "FAILED",
+                    "mandatory": True,
+                    "explanation": f"Synthetic / AI-generated photo detected: {auth_res['reason']}. Contractor closure proof rejected."
+                }
+            else:
+                checks["ai_authenticity_check"] = {
+                    "name": "ai_authenticity_check",
+                    "status": "PASSED",
+                    "mandatory": True,
+                    "explanation": "Closure photo verified: authentic physical camera capture confirmed."
+                }
+        else:
+            checks["ai_authenticity_check"] = {
+                "name": "ai_authenticity_check",
+                "status": "FAILED",
+                "mandatory": True,
+                "explanation": "No photo reference provided to verify physical authenticity."
+            }
+
         return checks
 
     @classmethod
@@ -191,7 +235,7 @@ class ClosureVerificationService:
                 reasons.append(f"[{rc['name']} REVIEW]: {rc['explanation']}")
         else:
             verdict = "APPROVED"
-            reasons.append("All 5 multi-modal closure verification checks passed autonomously.")
+            reasons.append("All 6 multi-modal closure verification checks passed autonomously.")
 
         closure = ClosureSubmission(
             id=f"cls_{uuid.uuid4().hex[:12]}",
@@ -240,6 +284,27 @@ class ClosureVerificationService:
                         actor="AGENT:verifier",
                         action="SPOOFING_GEOFENCE_BREACH",
                         reason=f"Contractor spoofing detected: closure submitted outside 50m geofence. Department trust score decreased to {dept.trust_score}%.",
+                        metadata={
+                            "closure_id": closure.id,
+                            "department_id": dept.id,
+                            "new_trust_score": dept.trust_score,
+                            "spoofing_flags_count": dept.spoofing_flags_count
+                        },
+                        timestamp=now
+                    )
+            ai_fraud_failed = any(fc["name"] == "ai_authenticity_check" for fc in failed_checks)
+            if ai_fraud_failed and target_dept_id:
+                dept = db.query(Department).filter(Department.id == target_dept_id).first()
+                if dept:
+                    dept.trust_score = max(5, dept.trust_score - 25)
+                    dept.spoofing_flags_count += 1
+                    audit_service.record_event(
+                        db=db,
+                        incident_id=incident.id,
+                        event_type="SPOOFING_ALERT",
+                        actor="AGENT:verifier",
+                        action="SYNTHETIC_AI_IMAGE_FRAUD",
+                        reason=f"Fraudulent closure attempt: Contractor submitted synthetic / AI-generated photo. Department trust score slashed to {dept.trust_score}%.",
                         metadata={
                             "closure_id": closure.id,
                             "department_id": dept.id,

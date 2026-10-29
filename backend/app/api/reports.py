@@ -1,3 +1,5 @@
+import base64
+from app.services.image_authenticity_service import image_authenticity_service
 import uuid
 from typing import List, Optional
 from fastapi import APIRouter, Depends, HTTPException, Query
@@ -29,6 +31,34 @@ def submit_report(payload: ReportCreate, db: Session = Depends(get_db)):
     5. Associates any uploaded cryptographic attachments
     6. Returns intake decision, tracking IDs, location status, and assignment details.
     """
+    # 0. Forensic AI Image Authenticity Verification
+    if payload.photo_data or payload.photo_ref:
+        img_bytes = b""
+        mime_type = "image/jpeg"
+        if payload.photo_data:
+            try:
+                raw_b64 = payload.photo_data
+                if "," in raw_b64:
+                    header, raw_b64 = raw_b64.split(",", 1)
+                    if "image/png" in header:
+                        mime_type = "image/png"
+                    elif "image/webp" in header:
+                        mime_type = "image/webp"
+                img_bytes = base64.b64decode(raw_b64)
+            except Exception:
+                img_bytes = b""
+
+        auth_check = image_authenticity_service.verify_authenticity(
+            image_bytes=img_bytes,
+            filename=payload.photo_ref or "",
+            mime_type=mime_type
+        )
+        if auth_check["verdict"] == "REJECTED":
+            raise HTTPException(
+                status_code=422,
+                detail=f"Synthetic / AI-Generated Image Rejected: {auth_check['reason']}"
+            )
+
     now = sim_clock.now()
 
     # Determine location mode & status

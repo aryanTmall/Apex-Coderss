@@ -41,6 +41,7 @@ class Settings(BaseSettings):
     # Demo & Synthetic Data Settings
     DEMO_MODE: bool = True
     DEFAULT_DEMO_COUNT: int = 450
+    UPLOAD_DIR: str = "uploads"
 
     model_config = SettingsConfigDict(
         env_file=".env",

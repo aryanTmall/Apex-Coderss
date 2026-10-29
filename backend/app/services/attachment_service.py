@@ -7,6 +7,7 @@ from sqlalchemy.orm import Session
 from app.config import settings
 from app.models.attachment import Attachment
 from app.services.sim_clock import sim_clock
+from app.services.image_authenticity_service import image_authenticity_service
 
 ALLOWED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp", ".pdf", ".mp4"}
 ALLOWED_MIME_TYPES = {
@@ -58,6 +59,23 @@ class AttachmentService:
 
         calculated_hash = sha256.hexdigest()
         mime_type = file.content_type or "image/jpeg"
+
+        # Forensic AI Image Authenticity Verification
+        with open(file_path, "rb") as f:
+            uploaded_bytes = f.read()
+        auth_result = image_authenticity_service.verify_authenticity(
+            image_bytes=uploaded_bytes,
+            filename=original_name,
+            mime_type=mime_type
+        )
+        if auth_result["verdict"] == "REJECTED":
+            if os.path.exists(file_path):
+                os.remove(file_path)
+            raise HTTPException(
+                status_code=422,
+                detail=f"Synthetic / AI-Generated Image Rejected: {auth_result['reason']}"
+            )
+
         now = sim_clock.now()
 
         att_id = f"att_{uuid.uuid4().hex[:12]}"
